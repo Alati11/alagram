@@ -1,0 +1,592 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app {
+    height: 100vh;
+    overflow: hidden; 
+}
+
+ul,
+ol,
+menu {
+    list-style: none;
+}
+
+/* img {
+    max-width: 100%;
+} */
+
+.col-4 {
+	flex-basis: calc((100% / 12) * 4);  
+    background-color: white;
+}   
+.col-3 {
+	flex-basis: calc((100% / 12) * 3);  
+    background-color: white;
+}
+
+.col-8 {
+	flex-basis: calc((100% / 12) * 8);
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-9 {
+	flex-basis: calc((100% / 12) * 9);  
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-xl { 
+    max-width: 100%;
+    margin: 0 auto; 
+}
+
+/* HEADER*/
+
+.header-style {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    position: relative;
+    box-shadow: 0px -5px 5px -5px rgba(0, 0, 0, 0.5); /* Ombra interna al bordo inferiore */
+}
+
+
+.header-chat {
+    background-color: #FFFFFF;
+    border-left: 1px solid #CDCDCD;
+    color: black;
+    position: relative;
+    box-shadow: inset -1px -3px 3px rgba(0, 0, 0, 0.1); /* Ombra interna */
+
+}
+
+.header-search {
+    background-color: rgba(255, 255, 255, 0.9); /* Imposta un'opacità al 90% */ 
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset -2px -3px 3px rgba(0, 0, 0, 0.1); /* Ombra interna */
+
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-left: 20px;
+}
+
+.icon-header {
+    width: 25px;
+    font-size: 20px;
+    color: gray;
+    position: relative;
+    transition: background-color 0.3s; 
+}
+
+.icon-header:hover {
+    color: #358DB5;
+    font-size:large;
+}
+
+.icon {
+    display:flex;
+    color:white;
+    margin-right: 20px;
+    gap: 25px;
+}
+
+.img-icon {
+    border-radius: 50%;
+    width: 60px;   
+    display: flex;
+    align-items: center;
+    margin-left: 8px;
+    }
+
+.img-icon_header {
+    width: 45px;
+}
+
+.img-icon .img-active {
+    border-radius: 50%;
+    width: 30px;   
+    margin: 0 10px; 
+    display: flex;
+    align-items: center;
+}    
+
+/* CONTACT */
+.hidden {
+    display:none;
+}
+
+.search-input {
+    height: 45px;
+    border-radius: 30px;
+    border: none;
+    background-color: #F4F4F5;
+    padding-left: 40px;
+    font-size: 16px;
+}
+
+.search-input:focus {
+    outline: none; /* Rimuove l'evidenziazione del focus quando l'input è selezionato */
+}
+
+.container-search {
+    position:relative;
+}
+
+.glass {
+    position: absolute;
+    align-items: center;
+    margin-left: 12px;
+    margin-top: 13px;   
+}
+
+.glass-width {
+    font-size: 18px;
+}
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.group-icon {
+    margin: 10px;
+}
+
+.contacts {
+    overflow-y: auto;
+    max-height: 92vh;
+    padding: 5px;
+}
+
+/* .contact {
+    display: flex;
+    justify-content: flex-end;
+} */
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    gap: 10px;
+}
+
+.contact-card:hover {
+    background-color: #F4F4F5;
+    border-radius: 10px;
+}
+
+.active {
+    border-radius: 10px;
+	background-color: #53C9E9; 
+    color: whitesmoke;
+}
+
+.active .contact-card:hover {
+    border-radius: 10px;
+	background-color: #53C9E9; 
+    color: whitesmoke;
+}
+    
+.contact__info {
+    width: 204px;
+}
+
+.contact__text {
+    color: #A1A1A4;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.active .contact__text {
+    color: whitesmoke;
+}
+
+.active .time {
+    color: whitesmoke;
+}
+.time {
+    font-size: 12px;
+    margin-right: 8px;
+    color: gray;   
+    width: 50px;
+}
+
+/* CONTENT */
+.content {
+    display:flex;  
+    height: 93vh;
+    overflow-y: auto;
+}
+
+#chat {
+    background-image: url('../img/telegram-1.jpg');
+    background-size: cover;
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column; 
+    gap: 13px;
+    padding-left: 150px;
+    padding-right: 150px;
+    padding-top: 5px;
+    padding-bottom: 145px;
+    overflow-y:  scroll;
+    position: relative;
+    z-index: 1;
+    height: calc(100vh - toolbarHeight);
+    font-size: 19px ;
+}
+
+.message {
+	border-radius: 16px;
+	padding: 10px 20px; 
+	max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Effetto ombra */
+}
+
+.message-date {
+    font-size: 10px;
+}
+
+.message.sent {
+	background-color: #DCF8C5;
+	align-self: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.message.received {
+	background-color: white;    
+	align-self: flex-start;
+
+}
+
+/* MODALE EMOTICON */
+.modal {
+    display: none; /* NascondO la modale di default */
+    position: fixed;
+    z-index: 1;
+    width: 380px;
+    height: 290px;
+    overflow: auto;
+    background-color: #fefefe;
+    border-radius: 20px;
+    margin-bottom: 380px;
+    margin-right: 272px;
+    transition: background-color 0.3s; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Effetto ombra */
+}
+
+.emojis {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 35px;
+    margin-top:12px;
+}
+
+/* Definizione dell'animazione di entrata */
+@keyframes modalEnter {
+    from {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Definizione dell'animazione di uscita */
+  @keyframes modalLeave {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+  }
+  
+  /* Applica le animazioni alla modale */
+  .modal {
+    animation: modalEnter 0.3s ease-out forwards;
+    
+  }
+  
+  .modal.leave {
+    animation: modalLeave 0.3s ease-in forwards;
+  }
+
+/* TOOLBAR */
+.toolbar {
+    position: fixed;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin-bottom: 8px; 
+    z-index: 0;
+    position: relative;
+ }
+
+ .toolbar-fixed {
+    position: fixed;
+    bottom: 0;
+    z-index: 1000; /* Assicura che la toolbar sia sopra gli altri elementi */
+    margin-left: 30px;
+}
+
+ .input_message {
+    width: 600px;
+    height: 55px;
+    border-radius: 10px;
+    border:none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    padding-left: 50px;
+    color: gray;
+    position: relative;
+    font-size: 18px;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Effetto ombra */
+ }
+
+ .icon-toolbar { 
+    width: 25px;
+    font-size: 20px;
+    color: gray;
+    position: relative;
+} 
+
+.icon-micro {
+    background-color: white;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    position:relative;
+    margin-left: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Effetto ombra */
+}
+
+.icon-micro:hover {
+    background-color: #58D2EF;
+    .micro {
+        color: white;
+    }
+}
+
+.micro {
+    position: absolute;
+    margin-left: 19px;
+    margin-top: 16px;
+    color: #A1A1A4;
+    font-size: 22px;
+}
+
+.icon-smile {
+    position: absolute;
+    margin-right: 600px;
+    font-size: 20px;
+    color: #A1A1A4;
+    z-index: 99;
+}
+
+.icon-smile:hover {
+    color: #58D2EF;
+}
+
+.icon-file {
+    position: absolute;
+    margin-left: 480px;
+    font-size: 25px;
+    color: #A1A1A4;
+    z-index: 99;
+}
+
+.icon-file:hover {
+    color: #58D2EF;
+}
+
+  
+/* The switch - the box around the slider */
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    --size-of-icon: 1.4em;
+    --slider-offset: 0.3em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+  } 
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f4f4f5;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #303136;
+  }
+  
+  input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: #303136;
+    box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+  } 
+
+/* Stili per la modalità notturna */
+.dark-mode .col-3 {
+    background-color: #212121;
+}
+.dark-mode .icon-header {
+    color: #AAAAAA; /* Cambia il colore delle icone */
+}
+
+.dark-mode .header-search {
+    background-color: #212121;
+}
+
+.dark-mode .header-chat {
+    background-color: #212121;
+    border-left-color: currentColor;
+}
+
+.dark-mode .icon-header:hover {
+    color: #766AC8;
+}
+
+.dark-mode .header-style {
+    background-color: #333; /* Cambia il colore di sfondo dell'intestazione */
+    color: #fff; /* Cambia il colore del testo dell'intestazione */
+}
+
+.dark-mode .header-search {
+    border-bottom: 1px solid black;
+    border-right: #212121;
+}
+
+.dark-mode .search-input {
+    background-color: #2C2C2C; /* Cambia il colore di sfondo dell'input di ricerca */
+    color: #A1A1A4;
+}
+
+.dark-mode .contacts {
+    background-color: #212121; /* Cambia il colore di sfondo dell'elenco dei contatti */
+    color: whitesmoke;       
+}
+
+.dark-mode .active {
+    background-color: #766AC8;
+}
+
+.dark-mode .text-name {
+    color: whitesmoke;
+}
+
+.dark-mode .contact-card:hover {
+    background-color: #2C2C2C; /* Cambia il colore di sfondo al passaggio del mouse sul contatto */
+}
+
+.dark-mode .active .contact-card:hover {
+    background-color: #766AC8;
+}
+.dark-mode #chat {
+    background-image: url(../img/telegram-dark3.avif)   
+}
+
+.dark-mode .message.sent {
+    background-color: #766AC8; /* Cambia il colore di sfondo dei messaggi inviati */
+    color: white;
+}
+
+.dark-mode .message.received {
+    background-color: #212121; /* Cambia il colore di sfondo dei messaggi ricevuti */
+    color: white;
+}
+
+.dark-mode .input_message {
+    background-color: #212121 ;
+    color: whitesmoke;
+}
+.dark-mode .toolbar {
+    color: #fff; /* Cambia il colore del testo della barra degli strumenti */
+}
+
+.dark-mode .icon-toolbar:hover {
+    background-color: #766AC8;
+}
+.dark-mode .icon-micro {
+    background-color: #212121;
+}
+.dark-mode .icon-smile:hover {
+    color: #766AC8;
+}
+
+.dark-mode .icon-file:hover {
+    color: #766AC8;
+}
+
+.dark-mode .modal {
+    background-color: #212121 ;
+}
